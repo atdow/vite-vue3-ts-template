@@ -1,7 +1,7 @@
 {
   "name": "vite-vue3-ts-template",
   "version": "0.0.0",
-  "homepage": "https://atdow.github.io/github-actions-demo",
+  "homepage": "https://atdow.github.io/vite-vue3-ts-template",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
