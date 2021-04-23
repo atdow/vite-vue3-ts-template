@@ -2,7 +2,7 @@
  * @Author: atdow
  * @Date: 2021-04-21 16:38:31
  * @LastEditors: null
- * @LastEditTime: 2021-04-23 16:20:39
+ * @LastEditTime: 2021-04-23 17:41:26
  * @Description: file content
 -->
 <template>
@@ -22,14 +22,14 @@ export default defineComponent({
   },
   setup() {
     console.log(9999)
-    axios
-      .get('/users/XPoet')
-      .then((res) => {
-        console.log('res: ', res)
-      })
-      .catch((err) => {
-        console.log('err: ', err)
-      })
+    // axios
+    //   .get('/users/XPoet')
+    //   .then((res) => {
+    //     console.log('res: ', res)
+    //   })
+    //   .catch((err) => {
+    //     console.log('err: ', err)
+    //   })
   }
 })
 </script>

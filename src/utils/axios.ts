@@ -2,13 +2,13 @@
  * @Author: atdow
  * @Date: 2021-04-21 16:51:52
  * @LastEditors: null
- * @LastEditTime: 2021-04-23 16:39:05
+ * @LastEditTime: 2021-04-23 17:40:43
  * @Description: file content
  */
 import Axios from 'axios'
 // import { ElMessage } from 'element-plus'
 
-const baseURL = 'https://api.github.com'
+const baseURL = ''
 
 const axios = Axios.create({
   baseURL,
