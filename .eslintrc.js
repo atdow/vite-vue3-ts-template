@@ -2,7 +2,7 @@
  * @Author: atdow
  * @Date: 2021-04-21 17:11:14
  * @LastEditors: null
- * @LastEditTime: 2021-04-21 17:58:19
+ * @LastEditTime: 2021-04-23 18:25:33
  * @Description: file content
  */
 module.exports = {
@@ -22,6 +22,17 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module'
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        // paths: ['src']
+      }
+    }
+  },
   plugins: ['vue', '@typescript-eslint'],
-  rules: {}
+  rules: {
+    'import/extensions': [2, 'never', { 'web.js': 'never', json: 'never' }],
+    'import/no-extraneous-dependencies': [2, { devDependencies: true }],
+    'import/no-unresolved': [2, { ignore: '*' }]
+  }
 }
