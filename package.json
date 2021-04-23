@@ -1,6 +1,6 @@
 {
   "name": "vite-vue3-ts-template",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://atdow.github.io/vite-vue3-ts-template",
   "scripts": {
     "dev": "vite",
