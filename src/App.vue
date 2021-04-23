@@ -2,7 +2,7 @@
  * @Author: atdow
  * @Date: 2021-04-21 16:38:31
  * @LastEditors: null
- * @LastEditTime: 2021-04-21 17:19:50
+ * @LastEditTime: 2021-04-23 16:20:39
  * @Description: file content
 -->
 <template>
@@ -21,6 +21,7 @@ export default defineComponent({
     HelloWorld
   },
   setup() {
+    console.log(9999)
     axios
       .get('/users/XPoet')
       .then((res) => {
