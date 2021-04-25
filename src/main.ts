@@ -2,18 +2,22 @@
  * @Author: atdow
  * @Date: 2021-04-21 16:38:31
  * @LastEditors: null
- * @LastEditTime: 2021-04-23 16:43:02
+ * @LastEditTime: 2021-04-25 10:49:09
  * @Description: file content
  */
 import { createApp } from 'vue'
-// aa
-// import ElementPlus from 'element-plus'
+import { ElButton, ElSelect } from 'element-plus'
 import App from './App.vue'
 
 import router from './router/index'
 import store from './store/index'
 
-// import 'element-plus/lib/theme-chalk/index.css'
+const app = createApp(App)
+app.use(ElButton)
+app.use(ElSelect)
 
-// createApp(App).use(router).use(store).use(ElementPlus).mount('#app')
-createApp(App).use(router).use(store).mount('#app')
+import 'element-plus/lib/theme-chalk/index.css'
+
+app.use(router)
+app.use(store)
+app.mount('#app')
