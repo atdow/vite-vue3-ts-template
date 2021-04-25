@@ -10,8 +10,17 @@
     "prepare": "husky install",
     "test": "jest"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "node ./scripts/git/commit-msg.js -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.{vue,js,ts}": "eslint --fix"
+    "src/**/*.{ts,js,vue}": [
+      "git add",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "vue": "^3.0.5",
