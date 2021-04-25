@@ -7,8 +7,6 @@
 const fs = require('fs')
 const checkMsg = require('./validate-commit-message')
 const msgFile = process.env['HUSKY_GIT_PARAMS']
-console.log('测试')
-debugger
 
 let isValid = true
 if (msgFile || true) {
