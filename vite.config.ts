@@ -2,7 +2,7 @@
  * @Author: atdow
  * @Date: 2021-04-21 16:38:31
  * @LastEditors: null
- * @LastEditTime: 2021-04-25 10:44:15
+ * @LastEditTime: 2021-04-25 18:20:49
  * @Description: file content
  */
 import { defineConfig } from 'vite'
@@ -10,6 +10,10 @@ import vue from '@vitejs/plugin-vue'
 // 如果编辑器提示 path 模块找不到，则可以安装一下 @types/node -> npm i @types/node -D
 import { resolve } from 'path'
 import styleImport from 'vite-plugin-style-import'
+
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir)
+}
 
 export default defineConfig({
   plugins: [
@@ -31,9 +35,13 @@ export default defineConfig({
     })
   ],
   resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src')
-    }
+    alias: [
+      // '@': resolve(__dirname, 'src'),
+      {
+        find: /\/@\//,
+        replacement: pathResolve('src') + '/'
+      }
+    ]
   },
   base: './',
   server: {

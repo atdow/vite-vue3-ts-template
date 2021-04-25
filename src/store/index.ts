@@ -2,33 +2,29 @@
  * @Author: atdow
  * @Date: 2021-04-21 16:49:05
  * @LastEditors: null
- * @LastEditTime: 2021-04-21 16:49:13
+ * @LastEditTime: 2021-04-25 15:17:19
  * @Description: file content
  */
-import { createStore } from "vuex";
+// import Vue from 'vue'
+import Vuex from 'vuex'
+import app from './modules/app'
+import user from './modules/user'
+import tagsView from './modules/tagsView'
+import permission from './modules/permission'
+import settings from './modules/settings'
+import getters from './getters'
 
-const defaultState = {
-  count: 0,
-};
+// Vue.use(Vuex)
 
-// Create a new store instance.
-export default createStore({
-  state() {
-    return defaultState;
+const store = new Vuex.Store({
+  modules: {
+    app,
+    user,
+    tagsView,
+    permission,
+    settings
   },
-  mutations: {
-    increment(state: typeof defaultState) {
-      state.count++;
-    },
-  },
-  actions: {
-    increment(context) {
-      context.commit("increment");
-    },
-  },
-  getters: {
-    double(state: typeof defaultState) {
-      return 2 * state.count;
-    },
-  },
-});
+  getters
+})
+
+export default store
