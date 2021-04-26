@@ -2,14 +2,14 @@
  * @Author: atdow
  * @Date: 2021-04-25 14:52:48
  * @LastEditors: null
- * @LastEditTime: 2021-04-25 14:53:39
+ * @LastEditTime: 2021-04-26 15:48:14
  * @Description: file content
  */
 import axios from 'axios'
 import { ElNotification, ElMessageBox, ElMessage } from 'element-plus'
-import store from '@/store'
-import { getToken } from '@/utils/auth'
-import errorCode from '@/utils/errorCode'
+import store from '/@/store'
+import { getToken } from '/@/utils/auth'
+import errorCode from '/@/utils/errorCode'
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 // 创建axios实例
@@ -75,7 +75,7 @@ service.interceptors.response.use(
         })
       })
     } else if (code === 500) {
-      Message({
+      ElMessage({
         message: msg,
         type: 'error'
       })
@@ -99,7 +99,7 @@ service.interceptors.response.use(
     } else if (message.includes('Request failed with status code')) {
       message = '系统接口' + message.substr(message.length - 3) + '异常'
     }
-    Message({
+    ElMessage({
       message: message,
       type: 'error',
       duration: 5 * 1000

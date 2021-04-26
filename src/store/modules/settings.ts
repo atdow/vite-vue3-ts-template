@@ -2,7 +2,7 @@
  * @Author: atdow
  * @Date: 2021-04-25 15:02:47
  * @LastEditors: null
- * @LastEditTime: 2021-04-25 18:30:39
+ * @LastEditTime: 2021-04-26 15:54:31
  * @Description: file content
  */
 
@@ -13,14 +13,14 @@ let variables = {
 
 import { IDefaultSettings, defaultSettings } from '/@/settings'
 import { Commit } from '_vuex@4.0.0@vuex'
-interface ISate extends IDefaultSettings {
+interface Istate extends IDefaultSettings {
   theme: string
 }
 
 const { sideTheme, showSettings, topNav, tagsView, fixedHeader, sidebarLogo } = defaultSettings
 
 const storageSetting = JSON.parse(localStorage.getItem('layout-setting') || '{}') || {}
-const state: ISate = {
+const state: Istate = {
   theme: storageSetting.theme || variables.theme,
   sideTheme: storageSetting.sideTheme || sideTheme,
   showSettings: showSettings,

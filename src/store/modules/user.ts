@@ -43,7 +43,7 @@ const user = {
       const password = userInfo.password
       const code = userInfo.code
       const uuid = userInfo.uuid
-      return new Promise((resolve, reject) => {
+      return new Promise<void>((resolve, reject) => {
         login(username, password, code, uuid)
           .then((res) => {
             setToken(res.token)
@@ -85,7 +85,7 @@ const user = {
 
     // 退出系统
     LogOut({ commit, state }) {
-      return new Promise((resolve, reject) => {
+      return new Promise<void>((resolve, reject) => {
         logout(state.token)
           .then(() => {
             commit('SET_TOKEN', '')
@@ -102,7 +102,7 @@ const user = {
 
     // 前端 登出
     FedLogOut({ commit }) {
-      return new Promise((resolve) => {
+      return new Promise<void>((resolve) => {
         commit('SET_TOKEN', '')
         removeToken()
         resolve()

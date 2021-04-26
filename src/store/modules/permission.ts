@@ -1,7 +1,7 @@
 import { constantRoutes } from '/@/router'
 import { getRouters } from '/@/api/menu'
-import Layout from '/@/layout/index'
-import ParentView from '/@/components/ParentView'
+import Layout from '/@/layout/index.vue'
+import ParentView from '/@/components/ParentView/index.vue'
 import { Commit } from '_vuex@4.0.0@vuex'
 
 interface IState {
